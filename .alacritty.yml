@@ -1,0 +1,21 @@
+font:
+  normal:
+    family: mononoki Nerd Font
+    style: Regular
+
+  bold:
+    family: mononoki Nerd Font
+    style: Bold
+
+  italic:
+    family: mononoki Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: mononoki Nerd Font
+    style: Bold Italic
+
+  size: 12
+
+window:
+  opacity: 0.98

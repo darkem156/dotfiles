@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# Set keyboard options
+setxkbmap -option grp:win_space_toggle latam,us &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+xsetroot -cursor_name left_ptr
+
+bspc config border_width	0
+bspc config window_gap		5
+
+bspc config split_ratio		0.5
+# bspc config focus_follows_pointer	true
+bspc config pointer_modifier	mod1
+
+bspc config single_monocle true
+bspc config gapless_monocle true
+bspc config borderless_monocle true
+
+bspc config automatic_scheme	longest_side
+
+bspc monitor -d browser dev terminal other youtube
+
+feh --bg-scale $HOME/Downloads/node-wallpaper.jpg
+
+$HOME/.config/polybar/launch.sh &
+
+# Rules
+# bspc rule -a NVIM desktop=dev

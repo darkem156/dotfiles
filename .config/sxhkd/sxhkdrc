@@ -1,0 +1,62 @@
+# make sxhkd reload its configuration files
+alt + Escape
+	pkill -USR1 -x sxhkd
+ 
+# quit or restart bspwm
+alt + shift + {q,r}
+	bspc {quit,wm -r}
+
+# Alacritty
+super + Return
+  alacritty
+
+# Google Chrome
+super + b
+  google-chrome
+
+# Change workspace
+super + { 1, 2, 3, 4, 5 }
+  bspc desktop -f { browser, dev, terminal, other, youtube }
+
+# Tests
+#super + { 0-9 }
+#  alacritty
+
+# Change to Previous or Next WorkSpace
+super + { Left, Right }
+  bspc desktop -f { prev, next }
+
+super + { h, l }
+  bspc desktop -f { prev, next }
+
+super + shift + { Left, Right }
+  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
+
+super + shift + { h, l }
+  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
+
+# Change to First and Last WorkSpace
+super + { Up, Down }
+  bspc desktop -f { ^1, ^5 }
+
+super + { k, j }
+  bspc desktop -f { ^1, ^5 }
+
+# Change Volume
+XF86AudioLowerVolume
+  amixer set Master 5%-
+XF86AudioRaiseVolume
+  amixer set Master 5%+
+XF86AudioMute
+  amixer set Master toggle
+
+# Change Local Window
+alt + { Left, Right }
+  bspc node -f { prev., next.}local.window
+
+alt + { h, l }
+  bspc node -f { prev., next.}local.window
+
+# Close Window
+super + BackSpace
+  bspc node -c
