@@ -62,13 +62,14 @@ alias cat='bat'
 
 alias vim="nvim"
 alias v="vim"
-alias pyt="cd $HOME/Documents/programacion/proyectos"
+alias pjt="cd $HOME/Documents/programacion/proyectos"
 alias tests="cd $HOME/Documents/programacion/pruebas/"
 alias dots="cd $HOME/Documents/dotfiles/"
+alias asm="alacritty --working-directory . & disown"
 alias bcon="bluetoothctl connect"
 alias bdis="bluetoothctl disconnect"
 
-alias mj"41:42:D4:9E:54:68"
+alias mj="41:42:D4:9E:54:68"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -18,10 +18,6 @@ super + b
 super + { 1, 2, 3, 4, 5 }
   bspc desktop -f { browser, dev, terminal, other, youtube }
 
-# Tests
-#super + { 0-9 }
-#  alacritty
-
 # Change to Previous or Next WorkSpace
 super + { Left, Right }
   bspc desktop -f { prev, next }
@@ -29,18 +25,25 @@ super + { Left, Right }
 super + { h, l }
   bspc desktop -f { prev, next }
 
-super + shift + { Left, Right }
-  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
+#super + shift + { Left, Right }
+#  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
 
-super + shift + { h, l }
-  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
+#super + shift + { h, l }
+#  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
 
-# Change to First and Last WorkSpace
+# Change window to WorkSpace and focus
+super + alt + { Left, Right }
+  bspc node --to-desktop { prev && bspc desktop -f prev, next && bspc desktop -f next } && bspc node -f next.local.window 
+
+super + alt + { h, l }
+  bspc node --to-desktop { prev && bspc desktop -f prev, next && bspc desktop -f next } && bspc node -f next.local.window 
+
+# Move 2 WorkSpaces
 super + { Up, Down }
-  bspc desktop -f { ^1, ^5 }
+  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
 
 super + { k, j }
-  bspc desktop -f { ^1, ^5 }
+  { bspc desktop -f prev & bspc desktop -f prev, bspc desktop -f next & bspc desktop -f next }
 
 # Change Volume
 XF86AudioLowerVolume

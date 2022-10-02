@@ -1,8 +1,5 @@
 #! /bin/bash
 
-# Set keyboard options
-setxkbmap -option grp:win_space_toggle latam,us &
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 xsetroot -cursor_name left_ptr
@@ -25,6 +22,9 @@ bspc monitor -d browser dev terminal other youtube
 feh --bg-scale $HOME/Downloads/node-wallpaper.jpg
 
 $HOME/.config/polybar/launch.sh &
+
+# Set keyboard options
+sleep 10s && setxkbmap -option grp:win_space_toggle latam,us &
 
 # Rules
 # bspc rule -a NVIM desktop=dev
