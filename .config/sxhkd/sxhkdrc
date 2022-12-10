@@ -12,7 +12,7 @@ super + Return
 
 # Google Chrome
 super + b
-  google-chrome
+  google-chrome-stable
 
 # Change workspace
 super + { 1, 2, 3, 4, 5 }
