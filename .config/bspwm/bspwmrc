@@ -19,12 +19,12 @@ bspc config automatic_scheme	longest_side
 
 bspc monitor -d browser dev terminal other youtube
 
-feh --bg-scale $HOME/Downloads/node-wallpaper.jpg
+feh --bg-scale $HOME/Documents/dotfiles/background.jpg
 
 $HOME/.config/polybar/launch.sh &
 
 # Set keyboard options
-sleep 10s && setxkbmap -option grp:win_space_toggle latam,us &
+sleep 30s && setxkbmap -option grp:win_space_toggle us,latam &
 
 # Rules
 # bspc rule -a NVIM desktop=dev

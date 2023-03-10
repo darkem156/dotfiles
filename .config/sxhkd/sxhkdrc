@@ -53,6 +53,10 @@ XF86AudioRaiseVolume
 XF86AudioMute
   amixer set Master toggle
 
+# Change brightness
+XF86MonBrightness{Up,Down}  
+  brightnessctl s 10{+,-}
+
 # Change Local Window
 alt + { Left, Right }
   bspc node -f { prev., next.}local.window
