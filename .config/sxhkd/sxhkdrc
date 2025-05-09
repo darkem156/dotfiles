@@ -14,9 +14,28 @@ super + Return
 super + b
   google-chrome-stable
 
+# Flameshot
+super + s
+  flameshot gui
+
+# Visual Studio Code
+super + v
+  code
+
+# Nautilus
+super + n
+  nautilus
+
+# Rider
+super + r
+  /home/emmanuel/Downloads/Rider/bin/rider.sh
+
 # Change workspace
-super + { 1, 2, 3, 4, 5 }
-  bspc desktop -f { browser, dev, terminal, other, youtube }
+super + { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }
+  bspc desktop -f { browser, search, output, dev, terminal, databases, other, school, youtube, messages }
+
+super + shift + { b, o, s, d, t, y, m }
+  bspc desktop -f { browser, search,  output,dev, terminal, youtube, messages }
 
 # Change to Previous or Next WorkSpace
 super + { Left, Right }
@@ -67,3 +86,9 @@ alt + { h, l }
 # Close Window
 super + BackSpace
   bspc node -c
+
+# focus desktop if available on monitor, otherwise get through swap
+# if desktop is active on another monitor, focused and active desktops are swapped, and focus stays on focused monitor.
+mod + 1-9,0
+    d='{1-9,10}'; \
+    bspc desktop -f "$d.local" || bspc desktop -s "$d"

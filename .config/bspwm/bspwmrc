@@ -3,6 +3,8 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 xsetroot -cursor_name left_ptr
+# Set keyboard options
+sleep 40s && setxkbmap -option grp:win_space_toggle us,latam &
 
 bspc config border_width	0
 bspc config window_gap		5
@@ -17,14 +19,9 @@ bspc config borderless_monocle true
 
 bspc config automatic_scheme	longest_side
 
-bspc monitor -d browser dev terminal other youtube
+bspc monitor -d browser search output dev terminal databases other school youtube messages
+#bspc monitor HDMI-1 -d other
 
 feh --bg-scale $HOME/Documents/dotfiles/background.jpg
 
 $HOME/.config/polybar/launch.sh &
-
-# Set keyboard options
-sleep 30s && setxkbmap -option grp:win_space_toggle us,latam &
-
-# Rules
-# bspc rule -a NVIM desktop=dev

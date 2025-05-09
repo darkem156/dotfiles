@@ -4,6 +4,9 @@ neofetch
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+#Fix Flutter problem not found google chrome executable
+export CHROME_EXECUTABLE=/bin/google-chrome-stable
+
 # Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -53,7 +56,7 @@ source /home/emmanuel/powerlevel10k/powerlevel10k.zsh-theme
 
 # Manual configuration
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.dotnet/tools/:/usr/local/go/bin/
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.dotnet/tools/:/usr/local/go/bin/:$HOME/go/bin:$HOME/.local/bin:$HOME/flutter/bin:$HOME/android-studio/bin:/home/emmanuel/.dotnet/tools:/home/emmanuel/Downloads/mcsim-6.2.0:$HOME/.local/share/solana/install/releases/1.14.17/solana-release/bin:$HOME/.pyenv/bin:$HOME/.pyenv/shims:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin
 
 # Manual aliases
 alias ll='lsd -lh --group-dirs=first'
@@ -65,12 +68,25 @@ alias cat='bat'
 
 alias vim="nvim"
 alias v="vim"
+alias tf="terraform"
 alias pjt="cd $HOME/Documents/programacion/proyectos"
 alias tests="cd $HOME/Documents/programacion/pruebas/"
 alias dots="cd $HOME/Documents/dotfiles/"
 alias asm="alacritty --working-directory . & disown"
 alias bcon="bluetoothctl connect"
 alias bdis="bluetoothctl disconnect"
+alias rider="$HOME/Downloads/Rider/bin/rider.sh"
+alias ga="git add"
+alias gap="git add ."
+alias gc="git commit"
+alias gcm="git commit -m"
+#alias gac="git add . && git commit -m"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gpl="git pull"
+alias gps="git push"
+alias gpm="git push origin main"
+alias gcl="git clone"
 
 alias mj="41:42:D4:9E:54:68"
 
@@ -90,6 +106,14 @@ function ccpp()
 function cjava()
 {
   javac $1 && java $1
+}
+
+function gac() {
+  git add $1 && git commit -m "$2"
+}
+
+function gacp() {
+  git add $1 && git commit -m "$2" && git push
 }
 
 function cnp()

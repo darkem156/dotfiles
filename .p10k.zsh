@@ -36,6 +36,7 @@
     vcs                     # git status
     command_execution_time
     context
+    terraform
     # prompt_char           # prompt symbol
   )
 
